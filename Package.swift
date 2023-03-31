@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
 	name: "swift-swiftuiprelude",
 	platforms: [
-		.iOS(.v11),
+		.iOS(.v13),
 		.macOS(.v10_15)
 	],
 	products: [
