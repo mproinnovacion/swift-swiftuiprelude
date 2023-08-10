@@ -31,5 +31,16 @@ class EdgeInsetsTests: XCTestCase {
 		
 		XCTAssertEqual(EdgeInsets.vertical(10).size, .init(width: 0, height: 20))
 		XCTAssertEqual(EdgeInsets.horizontal(10).size, .init(width: 20, height: 0))
+		
+		
+		XCTAssertEqual(
+			EdgeInsets(20).horizontal(0),
+			EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0)
+		)
+		
+		XCTAssertEqual(
+			EdgeInsets(20).vertical(0),
+			EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
+		)
 	}
 }

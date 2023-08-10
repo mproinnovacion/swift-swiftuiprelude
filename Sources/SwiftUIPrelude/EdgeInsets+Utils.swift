@@ -38,6 +38,20 @@ extension EdgeInsets {
 		return result
 	}
 	
+	public func horizontal(_ value: CGFloat) -> EdgeInsets {
+		var result = self
+		result.leading = value
+		result.trailing = value
+		return result
+	}
+	
+	public func vertical(_ value: CGFloat) -> EdgeInsets {
+		var result = self
+		result.top = value
+		result.bottom = value
+		return result
+	}
+	
 	public var onlyVertical: EdgeInsets {
 		.init(top: self.top, leading: 0, bottom: self.bottom, trailing: 0)
 	}
