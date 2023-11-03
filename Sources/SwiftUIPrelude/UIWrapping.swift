@@ -7,7 +7,16 @@
 
 #if os(iOS)
 import SwiftUI
-/// Provides a convenient 'wrapper' around a UIView
+/**
+ This UIWrapping allows you to build a UIKit component without any more than defining in a clousure how it will be build. Provides a convenient 'wrapper' around a UIView
+ 
+ UIWrapping<UILabel> { view in
+     view.numberOfLines = 0
+     view.text = "Lets enable\nmultiple lines"
+     view.textAlignment = .center
+ }
+ .fixedSize()
+ */
 public struct UIWrapping<V: UIView>: View {
     let wrapped: ViewWrapper<V>
     public var body: some View { wrapped }
