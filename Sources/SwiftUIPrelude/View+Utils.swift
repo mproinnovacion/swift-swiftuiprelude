@@ -37,6 +37,26 @@ extension View {
 	) -> some View {
 		isHidden(visible == false, remove: remove)
 	}
+    
+    /// Warning: Don't use it for animation or if the condition depends on State that changes too often
+    @ViewBuilder
+    func `if`<Content: View>(_ conditional: Bool, content: (Self) -> Content) -> some View {
+        if conditional {
+            content(self)
+        } else {
+            self
+        }
+    }
+    
+    /// Warning: Don't use it for animation or if the condition depends on State that changes too often
+    @ViewBuilder
+    func iflet<Content: View, T>(_ conditional: Optional<T>, @ViewBuilder _ content: (Self, _ value: T) -> Content) -> some View {
+        if let value = conditional {
+            content(self, value)
+        } else {
+            self
+        }
+    }
 }
 
 extension View {
